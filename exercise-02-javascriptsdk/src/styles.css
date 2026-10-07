@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap");
+
+:root {
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  color: #17343c;
+  background: #f5f6f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #102b35;
+  --teal: #167c80;
+  --muted: #566e6f;
+  --border: #dfe6e0;
+  --surface: #fcfdfa;
+  --surface-muted: #f4f7f3;
+  --control-radius: 8px;
+  --calcite-font-family: "DM Sans", "Segoe UI", sans-serif;
+  --calcite-color-brand: #167c80;
+  --calcite-color-brand-hover: #10686c;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body, #root { width: 100%; min-height: 100%; }
+body { margin: 0; min-width: 360px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+button, input, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .55; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+button { border: 1px solid var(--border); border-radius: var(--control-radius); padding: 9px 13px; color: var(--ink); background: white; transition: background-color 140ms ease-out, border-color 140ms ease-out, color 140ms ease-out; }
+button:hover:not(:disabled) { border-color: #aac5bf; background: #eef5f1; }
+a { color: var(--teal); }
+.brand { display: flex; align-items: center; gap: 13px; text-decoration: none; color: inherit; font-family: "Manrope", sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 1.7px; }
+.brand-mark { display: grid; place-items: center; height: 38px; width: 38px; border: 1px solid currentColor; border-radius: 11px 3px 11px 3px; font-size: 16px; letter-spacing: -1px; }
+.brand small { display: block; font: 500 9px "DM Sans", sans-serif; letter-spacing: 1.8px; margin-top: 5px; color: var(--muted); }
+.sign-in-page { min-height: 100dvh; display: grid; grid-template-columns: 1.2fr 1fr; }
+.welcome { background: var(--ink); color: #edf4ec; padding: 46px clamp(28px, 6vw, 96px); display: flex; flex-direction: column; min-height: 100dvh; position: relative; overflow: hidden; }
+.welcome::after { content: ""; position: absolute; width: 470px; height: 470px; border: 1px solid #436267; border-radius: 50%; right: -245px; bottom: -270px; box-shadow: 0 0 0 55px #ffffff04, 0 0 0 110px #ffffff03; pointer-events: none; }
+.welcome-copy { margin: auto 0; padding: 60px 0; max-width: 540px; }
+.welcome h1 { font-family: "Manrope", sans-serif; font-size: clamp(40px, 4.6vw, 68px); line-height: 1.15; font-weight: 500; letter-spacing: -0.035em; margin: 22px 0; }
+.sign-in-card { width: min(390px, calc(100% - 56px)); margin: auto; padding: 35px 0; }
+.contour-art { height: 180px; margin-bottom: 26px; }
+.contour-art svg { width: 100%; height: 100%; }
+.contour-art path { fill: none; stroke: #bad0c8; stroke-width: 1; }
+.contour-art circle { fill: var(--teal); }
+.contour-art .map-pulse { fill: #167c8015; stroke: #167c8050; }
+.sign-in-card h2 { font-family: "Manrope", sans-serif; font-size: 28px; letter-spacing: -1px; font-weight: 650; margin: 10px 0 15px; }
+.sign-in-card > p { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.primary-button { color: white; background: var(--teal); border-color: var(--teal); border-radius: var(--control-radius); }
+.primary-button:hover:not(:disabled) { background: #10686c; color: white; }
+.sign-in-button { margin-top: 20px; width: 100%; padding: 15px 18px; display: flex; justify-content: space-between; font-size: 14px; }
+.sign-in-card .sign-in-note { font-size: 11px !important; margin-top: 18px; }
+.external-link { font-size: 12px; text-underline-offset: 4px; }
+.auth-error, .workspace-error { color: #842f25; background: #fff0e9; border: 1px solid #e7c6b6; padding: 12px; font-size: 12px; line-height: 1.6; border-radius: 5px; }
+.app-shell { display: flex; flex-direction: column; width: 100%; height: 100dvh; min-height: 0; overflow: hidden; }
+.app-header { height: 72px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 24px; border-bottom: 1px solid var(--border); background: var(--surface); }
+.account { display: flex; align-items: center; gap: 16px; font-size: 12px; color: var(--muted); }
+.account > span { max-width: 170px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.account button { background: transparent; font-size: 11px; min-height: 34px; padding: 7px 13px; }
+.workspace-grid { display: grid; grid-template-columns: 310px minmax(260px, 1fr) 350px; flex: 1; min-height: 0; width: 100%; }
+.county-sidebar, .assistant-panel { min-height: 0; background: var(--surface); overflow-y: auto; scrollbar-width: thin; scrollbar-color: #bdccc3 transparent; }
+.county-sidebar { border-right: 1px solid var(--border); background: var(--surface-muted); }
+.assistant-panel { border-left: 1px solid var(--border); display: flex; flex-direction: column; }
+.map-panel { position: relative; display: flex; flex-direction: column; min-height: 0; }
+.map-toolbar { flex-shrink: 0; min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 18px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.map-toolbar strong { display: block; font-family: "Manrope", sans-serif; font-size: 13px; font-weight: 650; }
+.map-toolbar button { font-size: 11px; font-weight: 500; min-height: 34px; padding: 8px 12px; }
+.map-toolbar .active-mode { color: #583385; border-color: #8e69bf; background: #f1eafa; }
+.map-toolbar .active-mode:hover:not(:disabled) { color: #583385; border-color: #7250ad; background: #e6daf4; }
+.map-host { flex: 1; min-height: 0; background: #e4ebe5; }
+arcgis-map { display: block; width: 100%; height: 100%; }
+.map-loading { position: absolute; inset: 56px 0 0; display: flex; align-items: center; justify-content: center; gap: 12px; background: #edf2eebf; color: var(--muted); font-size: 12px; pointer-events: none; }
+.map-hint { position: absolute; bottom: 35px; left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100% - 24px); padding: 10px 14px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; background: #102b35ed; color: #edf4ee; font-size: 10px; border-radius: 5px; box-shadow: 0 3px 12px #102b351a; pointer-events: none; }
+.comparison-progress { flex-basis: 100%; text-align: center; line-height: 1.5; }
+.selected-count { color: #eadcf7; }
+.comparison-summary { flex-basis: 100%; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; border-top: 1px solid #648381; padding-top: 10px; line-height: 1.6; text-align: center; }
+.comparison-summary strong { display: block; font-weight: 600; color: #87dedb; }
+.map-hint button { pointer-events: auto; min-height: 28px; padding: 4px 8px; font-size: 10px; border-color: #648381; color: #edf4ee; background: transparent; }
+.map-hint button:hover:not(:disabled) { border-color: #a9c4bd; color: white; background: #24434a; }
+.assistant-host { flex: 1; min-height: 300px; }
+arcgis-assistant { display: block; width: 100%; height: 100%; --calcite-panel-background-color: var(--surface); }
+.assistant-loading { padding: 18px; color: var(--muted); font-size: 12px; }
+.error-stack:empty { display: none; }
+.error-stack { max-height: 140px; overflow-y: auto; background: #fff0e9; }
+.workspace-error { border-radius: 0; border-width: 0 0 1px; display: flex; align-items: center; gap: 15px; padding: 7px 20px; }
+.workspace-error button { margin-left: auto; padding: 0 5px; border: 0; color: #842f25; background: transparent; font-size: 18px; }
+.workspace-loading, .startup-error { padding: 50px; color: var(--ink); }
+.mobile-tabs { display: none; }
+.spinner { width: 18px; height: 18px; border: 2px solid #c6d6ce; border-top-color: var(--teal); border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (min-width: 1600px) { .workspace-grid { grid-template-columns: 340px minmax(300px, 1fr) 390px; } }
+@media (max-width: 1150px) { .workspace-grid { grid-template-columns: 275px minmax(240px, 1fr) 305px; } }
+@media (max-width: 900px) {
+  .app-header { height: 65px; padding: 0 16px; }
+  .brand { font-size: 12px; }
+  .account > span { max-width: 110px; }
+  .mobile-tabs { display: flex; flex-shrink: 0; padding: 8px 16px; gap: 8px; border-bottom: 1px solid var(--border); }
+  .mobile-tabs button { flex: 1; min-height: 40px; text-transform: capitalize; font-size: 12px; font-weight: 500; }
+  .mobile-tabs [aria-current] { background: var(--teal); border-color: var(--teal); color: white; }
+  .workspace-grid { display: block; position: relative; }
+  .county-sidebar, .map-panel, .assistant-panel { position: absolute; inset: 0; visibility: hidden; }
+  [data-panel=map] .map-panel, [data-panel=county] .county-sidebar, [data-panel=assistant] .assistant-panel { visibility: visible; z-index: 1; }
+  .county-sidebar { padding: 0 max(0px, calc((100vw - 480px) / 2)); }
+  .sign-in-page { grid-template-columns: 1fr 1fr; }
+  .welcome { padding: 30px; }
+  .welcome h1 { font-size: 41px; }
+}
+@media (max-width: 640px) {
+  .sign-in-page { display: block; }
+  .welcome { min-height: 0; padding: 24px; }
+  .welcome-copy { padding: 30px 0 12px; }
+  .welcome h1 { font-size: 39px; }
+  .contour-art { display: none; }
+  .sign-in-card { padding: 32px 0; }
+  .account > span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
