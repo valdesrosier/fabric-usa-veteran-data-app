@@ -1,15 +1,14 @@
-# Veteran Atlas
+# Veteran Atlas application guide
 
 React + TypeScript county explorer using ArcGIS Maps SDK for JavaScript 5.1.26,
-AI Components 5.1.26 and Calcite 5.1.2. All application files and tooling are
-contained in this directory.
+AI Components 5.1.26 and Calcite 5.1.2. Run commands from the repository root;
+see the [project README](../README.md) for the quick start and directory layout.
 
 ## Run
 
 Requires Node.js 22.12+ (verified with Node 24).
 
 ```powershell
-Set-Location .\exercise-02-javascriptsdk
 npm ci
 npm run dev
 ```
@@ -144,7 +143,7 @@ For user-assisted live verification, leave `npm run dev` running, then:
 node .\scripts\live-browser.mjs
 ```
 
-Sign in in the opened Chromium window. In another terminal in this directory:
+Sign in in the opened Chromium window. In another terminal at the repository root:
 
 ```powershell
 node .\scripts\verify-live.mjs
@@ -160,6 +159,15 @@ scripts.
 
 The user-facing verification window uses the browser's actual window size
 (`viewport: null`), rather than a fixed emulated viewport.
+
+To check a live assistant response using the same signed-in browser:
+
+```powershell
+node .\scripts\check-assistant.mjs
+```
+
+This asks for map bookmarks by default; `--help-prompt` requests Help instead.
+It requires the live browser above and does not bypass sign-in.
 
 ## Sources
 
